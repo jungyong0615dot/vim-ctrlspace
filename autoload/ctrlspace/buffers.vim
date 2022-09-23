@@ -268,6 +268,7 @@ function! ctrlspace#buffers#DetachBuffer() abort
             call ctrlspace#window#Kill(0, 0)
         endif
         call remove(t:CtrlSpaceList, nr)
+        call remove(t:bufs, selBufWin)
         call ctrlspace#window#Toggle(1)
         call ctrlspace#window#MoveSelectionBar(curln)
     endif
