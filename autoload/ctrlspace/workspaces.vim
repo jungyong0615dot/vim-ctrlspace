@@ -251,6 +251,7 @@ function! ctrlspace#workspaces#LoadWorkspace(bang, name) abort
 
     call ctrlspace#ui#Msg(msg)
     call ctrlspace#ui#DelayedMsg(msg)
+    lua require("core.utils").compare_bufs()
 
     silent! exe "cd " . fnameescape(cwdSave)
 
